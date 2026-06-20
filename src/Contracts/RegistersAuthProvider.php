@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Webkernel\StdUser\Contracts;
+namespace Webkernel\Component\User\Contracts;
 
 interface RegistersAuthProvider
 {

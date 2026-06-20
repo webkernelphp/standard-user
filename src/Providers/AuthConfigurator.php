@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Webkernel\StdUser\Providers;
+namespace Webkernel\Component\User\Providers;
 
 use Webkernel\WebApp;
-use Webkernel\StdUser\Contracts\RegistersAuthProvider;
+use Webkernel\Component\User\Contracts\RegistersAuthProvider;
 
 final readonly class AuthConfigurator
 {

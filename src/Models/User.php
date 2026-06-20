@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Webkernel\StdUser\Models;
+namespace Webkernel\Component\User\Models;
 
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasAvatar;
