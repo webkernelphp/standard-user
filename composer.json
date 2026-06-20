@@ -1,10 +1,10 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "webkernel/standard-user",
+    "name": "webkernel/component-user",
     "description": "Sovereign user blueprint for Webkernel. Provides the base Eloquent model, Filament integration, and runtime auth configuration injection.",
     "version": "0.1.0",
     "homepage": "https://www.webkernelphp.com/",
-    "type": "webkernel-engine",
+    "type": "webkernel-component",
     "license": "EPL-2.0",
     "authors": [
         {
@@ -14,13 +14,13 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/webkernelphp/standard-user/issues"
+        "issues": "https://github.com/webkernelphp/component-user/issues"
     },
     "require": {
         "php": "^8.2",
-        "laravel/framework": "^11.0|^12.0",
+        "laravel/framework": "*",
         "webkernel/standard-lifecycle": ">=0.1.0",
-        "filament/filament": "^3.0"
+        "filament/filament": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^11.0",
@@ -28,23 +28,23 @@
     },
     "autoload": {
         "psr-4": {
-            "Webkernel\\StdUser\\": "src/"
+            "Webkernel\\Component\\User\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Webkernel\\StdUser\\Tests\\": "tests/"
+            "Webkernel\\Component\\User\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Webkernel\\StdUser\\Providers\\StdUserServiceProvider"
+                "Webkernel\\Component\\User\\Providers\\StdUserServiceProvider"
             ]
         },
         "webkernel": {
-            "package_repo": "git@github.com:webkernelphp/standard-user.git",
-            "prefix": "standard-user",
+            "package_repo": "git@github.com:webkernelphp/component-user.git",
+            "prefix": "component-user",
             "config_scope": "auth"
         }
     },
