@@ -7,9 +7,9 @@ namespace Webkernel\StdUser\Providers;
 use Webkernel\WebApp;
 use Webkernel\StdUser\Contracts\RegistersAuthProvider;
 
-final class AuthConfigurator
+final readonly class AuthConfigurator
 {
-    public function __construct(private readonly WebApp $app) {}
+    public function __construct(private WebApp $app) {}
 
     /**
      * Set the default user model for the primary auth provider.

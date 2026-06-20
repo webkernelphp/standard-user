@@ -21,13 +21,14 @@ abstract class User extends Authenticatable implements FilamentUser, HasAvatar
      * Override this in the child model to use a specific DB connection.
      * Null means the default connection is used.
      */
-    protected $connection = null;
+    protected $connection;
 
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
+    #[\Override]
     protected function casts(): array
     {
         return [
