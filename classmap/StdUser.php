@@ -4,11 +4,11 @@ use Filament\Models\Contracts\{FilamentUser, HasAvatar};
 use Filament\Panel;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Webkernel\Component\AccessControl\Concerns\{HasBusinessAccess, HasPrivilegeLevel};
+use Webkernel\Component\AccessControl\Concerns\{HasBusinessAccess, HasPrivilegeLevel, HasRoles};
 
 abstract class StdUser extends Authenticatable implements FilamentUser, HasAvatar
 {
-    use Notifiable, HasPrivilegeLevel, HasBusinessAccess;
+    use Notifiable, HasPrivilegeLevel, HasBusinessAccess, HasRoles;
 
     /** Override to change the table name */ protected $table = 'users';
     /** Custom DB connection (null for default). */ protected $connection;
@@ -18,7 +18,7 @@ abstract class StdUser extends Authenticatable implements FilamentUser, HasAvata
         'remember_token',
     ];
 
-    #[\Override]
+   // #[\Override]
     protected function casts(): array
     {
         return [

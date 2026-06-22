@@ -17,7 +17,7 @@ class StdUserServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../../migrations');
 
         /** @var AuthConfigurator $configurator */
         $configurator = $this->app->make(AuthConfigurator::class);
