@@ -10,6 +10,7 @@ use Webkernel\Component\User\Providers\AuthConfigurator;
 
 class StdUserServiceProvider extends ServiceProvider
 {
+    #[\Override]
     public function register(): void
     {
         $this->app->singleton(AuthConfigurator::class, fn($app): AuthConfigurator => new AuthConfigurator($app));
@@ -31,7 +32,7 @@ class StdUserServiceProvider extends ServiceProvider
         // when they need to register an additional auth provider or guard.
         $this->app['events']->listen(
             'webkernel.auth.register_provider',
-            function (RegistersAuthProvider $registration) use ($configurator) {
+            function (RegistersAuthProvider $registration) use ($configurator): void {
                 $configurator->registerProvider($registration);
             }
         );
